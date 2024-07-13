@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -25,7 +29,7 @@
         <?php
             echo "<h4>Biblioteca Aserri</h4>";
 
-            $nombre = "Karol";
+            $nombre = "Karol4444";
 
             $edad = 34;
 
@@ -33,7 +37,7 @@
 
 
             echo $nombre."<br>";
-            echo "<h1>".$esEstudiante."</h1>";
+            echo "<h1>".$_SESSION["username"]."</h1>";
         ?>
     </main>
     <footer>
