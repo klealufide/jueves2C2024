@@ -12,7 +12,7 @@ echo "Edad : " . $edad . $etiquetaEnter;
 echo "Altura : " . $altura . $etiquetaEnter;
 echo "Es estudiante : " . $estudianteActivo . $etiquetaEnter;
 
-
+/*
 $variable = "Hola soy global". $etiquetaEnter;
 
 function miFuncion()
@@ -248,3 +248,5 @@ echo "Suma: $a + $b = ".calculadora($a, $b,'+')."<br>";
 echo "Resta: $a - $b = ".calculadora($a, $b,'-')."<br>";
 echo "Multiplicación: $a * $b = ".calculadora($a, $b,'*')."<br>";
 echo "División: $a / $b = ".calculadora($a, $b,'/')."<br>";
+
+*/
