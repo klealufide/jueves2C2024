@@ -16,7 +16,13 @@ echo "Conexion exitosa";
 
 // CREATE -> INSERT
 
-$sql = "INSERT INTO usuarios (usuario, clave,  email) VALUES ( 'tatiana', '123456', 't@l.com');";
+//$usuario = "kataty";
+//$clave = "root";
+
+// Crear usuario
+//$hash = password_hash($clave,PASSWORD_BCRYPT);
+
+$sql = "INSERT INTO usuarios (usuario, clave,  email) VALUES ( '$usuario', '$hash', 't@l.com');";
 
 if($conn->query($sql) === TRUE){
     echo "Registro agregado exitosamente!";
@@ -24,14 +30,25 @@ if($conn->query($sql) === TRUE){
     echo "Error al agregar el registro!";
 }
 
-// Read -> Select
 
-$sql = "SELECT * FROM usuarios";
+// Read -> Select
+// login
+$sql = "SELECT * FROM usuarios where usuario = '$usuario'";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
-        echo "ID:".$row["id"]." "."Usuario:".$row["usuario"]." Email:".$row["email"]."<br> ";
+        if($usuario == $row["usuario"]){
+            /*  echo "usuario existe <br>";
+            if(password_verify($clave, $row["clave"])){
+                echo "clave es correcta<br>";
+            } else {
+                echo "clave incorrecta";
+            }
+            */
+            echo "ID:".$row["id"]." "."Usuario:".$row["usuario"]." Email:".$row["email"]."<br> ";
+        }
+       
     }
 } else {
     echo "No hay registros!";
@@ -57,3 +74,14 @@ if($conn->query($sql) === TRUE){
 }else {
     echo "Error al borrar el registro!";
 }
+
+
+// Hashing
+
+$clave = "123456";
+
+$hash = password_hash($clave,PASSWORD_BCRYPT);
+
+// validar
+
+password_verify($clave, $hash);
