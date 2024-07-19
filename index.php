@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,12 +16,17 @@
         <h1>Biblioteca Aserri</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.php">Inicio</a></li>
                 <li><a href="#">Catalogo</a></li>
                 <li><a href="#">Servicios</a></li>
                 <li><a href="#">Prestamo</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
-                <li><a href="#">Inicio de Sesion</a></li>
+                <?php if(isset($_SESSION["usuario"]) && $_SESSION["usuario"] != "")  {?>
+                    <li><a href="salir.php">Salir</a></li>
+                <?php }  else { ?>
+                <li><a href="ingresar.php">Inicio de Sesion</a></li>
+
+                <?php } ?>
             </ul>
         </nav>
     </header>

@@ -23,19 +23,15 @@
     </header>
     <main>
         <section>
-            <h2>Contacto</h2>
-            <p class="contact">Para mas informacion, puedes contactarnos a travez de nuestro formulario en linea</p>
-            <form method="POST" action="procesar_contacto.php">
-                <label>Nombre</label>
-                <input type="text" name="nombre">
+            <h2>Iniciar sesion</h2>
+             <form method="POST" action="procesar_ingresar.php">
+                <label>Usuario</label>
+                <input type="text" name="usuario">
                 <br>
-                <label>Email</label>
-                <input type="email" name="correo">
+                <label>Clave</label>
+                <input type="password" name="clave">
                 <br>
-                <label>Mensaje</label>
-                <textarea name="mensaje"></textarea>
-                <br>
-                <button type="submit" id="boton_envio">Enviar</button>
+                <button type="submit" id="boton_envio">Ingresar</button>
             </form>
         </section>
     </main>

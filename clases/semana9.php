@@ -41,6 +41,8 @@ if($result->num_rows > 0){
         if($usuario == $row["usuario"]){
             /*  echo "usuario existe <br>";
             if(password_verify($clave, $row["clave"])){
+            session_start();
+            $_SESSION['roles'] = $row['rol'];
                 echo "clave es correcta<br>";
             } else {
                 echo "clave incorrecta";

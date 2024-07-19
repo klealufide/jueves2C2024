@@ -42,7 +42,6 @@ nav ul li a:hover {
 
 main {
     padding: 20px;
-    font-size: 50px!important;
 }
 
 section {
@@ -72,6 +71,7 @@ form label {
 
 form input[type="text"],
 form input[type="email"],
+form input[type="password"],
 form textarea {
     width: 100%;
     padding: 10px;
