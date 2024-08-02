@@ -1,3 +1,9 @@
+<?php
+include("functions.php");
+$menu = getMenu();
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -12,12 +18,9 @@
         <h1>Biblioteca Aserri</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Catalogo</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Prestamo</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
-                <li><a href="ingresar.php">Inicio de Sesion</a></li>
+                <?php foreach ($menu as $item) { ?>
+                    <li><a href="<?php echo $item["url"] ?>"><?php echo $item["name"] ?></a></li>
+                <?php } ?>
             </ul>
         </nav>
     </header>

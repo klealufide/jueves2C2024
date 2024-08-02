@@ -1,5 +1,6 @@
 <?php 
-session_start();
+include("functions.php");
+$menu = getMenu();
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +10,8 @@ session_start();
     <meta charset="UTF-8">
     <title>Biblioteca Aserri</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/scriptvjquery.js"></script>
 </head>
 
 <body>
@@ -16,23 +19,15 @@ session_start();
         <h1>Biblioteca Aserri</h1>
         <nav>
             <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="#">Catalogo</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Prestamo</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
-                <?php if(isset($_SESSION["usuario"]) && $_SESSION["usuario"] != "")  {?>
-                    <li><a href="salir.php">Salir</a></li>
-                <?php }  else { ?>
-                <li><a href="ingresar.php">Inicio de Sesion</a></li>
-
+            <?php foreach ($menu as $item) { ?>
+                    <li><a href="<?php echo $item["url"] ?>"><?php echo $item["name"] ?></a></li>
                 <?php } ?>
             </ul>
         </nav>
     </header>
     <main>
         <section>
-            <img width="560" height="315" src="./images/imagen1.jpg">
+            <img width="560" height="315" src="./images/imagen1.jpg" id="imagenPrincipal">
         </section>
         <section>
             <iframe width="560" height="315"
@@ -70,15 +65,15 @@ session_start();
             <p class="contact">Para mas informacion, puedes contactarnos a travez de nuestro formulario en linea</p>
             <form>
                 <label>Nombre</label>
-                <input type="text">
+                <input type="text" id="nombre">
                 <br>
                 <label>Email</label>
-                <input type="email">
+                <input type="email" id="email">
                 <br>
                 <label>Mensaje</label>
-                <textarea></textarea>
+                <textarea id="mensaje"></textarea>
                 <br>
-                <button type="submit" id="boton_envio">Enviar</button>
+                <button type="button" id="boton_envio">Enviar</button>
             </form>
         </section>
     </main>
