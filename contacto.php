@@ -11,6 +11,8 @@ $menu = getMenu();
     <meta charset="UTF-8">
     <title>Biblioteca Aserri</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/script.js"></script>
 </head>
 
 <body>
@@ -28,17 +30,17 @@ $menu = getMenu();
         <section>
             <h2>Contacto</h2>
             <p class="contact">Para mas informacion, puedes contactarnos a travez de nuestro formulario en linea</p>
-            <form method="POST" action="procesar_contacto.php">
+            <form>
                 <label>Nombre</label>
-                <input type="text" name="nombre">
+                <input type="text" name="nombre" id="nombre">
                 <br>
                 <label>Email</label>
-                <input type="email" name="correo">
+                <input type="email" name="correo" id="correo">
                 <br>
                 <label>Mensaje</label>
-                <textarea name="mensaje"></textarea>
+                <textarea name="mensaje" id="mensaje"></textarea>
                 <br>
-                <button type="submit" id="boton_envio">Enviar</button>
+                <button type="button" id="boton_envio">Enviar</button>
             </form>
         </section>
     </main>

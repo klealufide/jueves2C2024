@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Consejos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h2>Consejo del dia</h2>
+            <div><input type="button" id="obtenerConsejo" value="Obtener consejo"></div>
+        </section>
+        <section>
+            <p id="consejo">
+            </p>
+        </section>
+    </main>
+</body>
+<script>
+$(function() {
+  $("#obtenerConsejo").click(function(){
+    const url = "https://api.adviceslip.com/advice";
+    $.get(url, function(data){
+        console.log(data);
+        var result = JSON.parse(data);
+        $("#consejo").text(result.slip.advice);
+        console.log(result);
+    })
+  });
+});
+</script>
+
+</html>
