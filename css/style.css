@@ -147,3 +147,23 @@ footer p {
 .colorAzul {
     color: blue!important;
 }
+
+#cuadrado {
+    width: 500px;
+    height: 500px;
+    background-color: green;
+}
+
+.rojo {
+    background-color: red!important;
+}
+
+.azul {
+    background-color: blue!important;
+}
+
+
+
+.rosado {
+    background-color: pink!important;
+}
